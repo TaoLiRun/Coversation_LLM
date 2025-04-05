@@ -1,0 +1,32 @@
+Skipping patient 0 as it has already been processed.
+Skipping patient 1 as it has already been processed.
+|||||||||||||||||||| PATIENT #2 ||||||||||||||||||||
+
+question: Which of the following is the most likely diagnosis for the patient?; answer: True; items: 4; depth: 0; is_terminal: False
+==================== Turn 1 ====================
+
+[{'role': 'user', 'content': "You are a doctor. Here are all the possible diseases that the patient may suffer from:\nVaricella, Gianotti-Crosti syndrome, Langerhans cell histiocytosis, Pityriasis lichenoides et varioliformis acuta\n\nPlease design a question to ask your patient with symptoms about disease and can only be answer by YES or NO.  Then classify the possible disease above based on this question. If the answer is 'YES', put this disease into 'YES: ...', otherwise to 'NO: ...'. Finally calculate how many X in YES and NO.\nNotably, this question should fulfill that the count of YES and NO are almost the same with a permissible discrepancy of no more than one!\nYou should think about best 3 questions to response. And your answer should be:\nQuestion 1: ...?\nYES: aaa, bbb, ... (disease names only)\nCount of YES: ...\nNO: ccc, ddd, ... (disease names only)\nCount of NO: ...\n"}]
+['#  Question 1: Have you recently had a fever and/or rash?\n\nYES: Varicella, Pityriasis lichenoides et varioliformis acuta\nCount of YES: 2\n\nNO: Gianotti-Crosti syndrome, Langerhans cell histiocytosis\nCount of NO: 2\n\nQuestion 2: Have you noticed any skin lesions or rashes on your body?\n\nYES: Gianotti-Crosti syndrome, Pityriasis lichenoides et varioliformis acuta\nCount of YES: 2\n\nNO: Varicella, Langerhans cell histiocytosis\nCount of NO: 2\n\nQuestion 3: Have you experienced any respiratory symptoms, such as cough or shortness of breath?\n\nYES: Varicella\nCount of YES: 1\n\nNO: Gianotti-Crosti syndrome, Langerhans cell histiocytosis, Pityriasis lichenoides et varioliformis acuta\nCount of NO: 3\n\nThe count of YES and NO is not exactly the same, but it is within a permissible discrepancy of one. Therefore, these questions can be used to help determine the possible diseases that the patient may suffer from.']
+question: Have you recently had a fever and/or rash?; answer: True; items: 2; depth: 1; is_terminal: True
+question: Have you recently had a fever and/or rash?; answer: False; items: 2; depth: 1; is_terminal: True
+question: Have you noticed any skin lesions or rashes on your body?; answer: True; items: 2; depth: 1; is_terminal: True
+question: Have you noticed any skin lesions or rashes on your body?; answer: False; items: 2; depth: 1; is_terminal: True
+question: Have you experienced any respiratory symptoms, such as cough or shortness of breath?; answer: True; items: 1; depth: 1; is_terminal: True
+question: Have you experienced any respiratory symptoms, such as cough or shortness of breath?; answer: False; items: 3; depth: 1; is_terminal: False
+0 6
+[{'role': 'user', 'content': "You are a doctor. Here are all the possible diseases that the patient may suffer from:\nGianotti-Crosti syndrome, Pityriasis lichenoides et varioliformis acuta, Langerhans cell histiocytosis\n\nPlease design a question to ask your patient with symptoms about disease and can only be answer by YES or NO.  Then classify the possible disease above based on this question. If the answer is 'YES', put this disease into 'YES: ...', otherwise to 'NO: ...'. Finally calculate how many X in YES and NO.\nNotably, this question should fulfill that the count of YES and NO are almost the same with a permissible discrepancy of no more than one!\nYou should think about best 3 questions to response. And your answer should be:\nQuestion 1: ...?\nYES: aaa, bbb, ... (disease names only)\nCount of YES: ...\nNO: ccc, ddd, ... (disease names only)\nCount of NO: ...\n"}]
+['#  Question 1: Have you noticed any skin rashes or lesions on your body?\n\nYES: Gianotti-Crosti syndrome, Pityriasis lichenoides et varioliformis acuta\nCount of YES: 2\n\nNO: Langerhans cell histiocytosis\nCount of NO: 1\n\nQuestion 2: Have you experienced any respiratory symptoms, such as coughing or difficulty breathing?\n\nYES: Pityriasis lichenoides et varioliformis acuta\nCount of YES: 1\n\nNO: Gianotti-Crosti syndrome, Langerhans cell histiocytosis\nCount of NO: 2\n\nQuestion 3: Have you noticed any enlarged lymph nodes or swelling in your neck, underarm, or groin areas?\n\nYES: Langerhans cell histiocytosis\nCount of YES: 1\n\nNO: Gianotti-Crosti syndrome, Pityriasis lichenoides et varioliformis acuta\nCount of NO: 2\n\nThe count of YES and NO is not exactly the same, but it is within a permissible discrepancy of one. Therefore, this set of questions fulfills the requirement.']
+question: Have you noticed any skin rashes or lesions on your body?; answer: True; items: 2; depth: 2; is_terminal: True
+question: Have you noticed any skin rashes or lesions on your body?; answer: False; items: 1; depth: 2; is_terminal: True
+question: Have you experienced any respiratory symptoms, such as coughing or difficulty breathing?; answer: True; items: 1; depth: 2; is_terminal: True
+question: Have you experienced any respiratory symptoms, such as coughing or difficulty breathing?; answer: False; items: 2; depth: 2; is_terminal: True
+question: Have you noticed any enlarged lymph nodes or swelling in your neck, underarm, or groin areas?; answer: True; items: 1; depth: 2; is_terminal: True
+question: Have you noticed any enlarged lymph nodes or swelling in your neck, underarm, or groin areas?; answer: False; items: 2; depth: 2; is_terminal: True
+1 11
+2 11
+[Expert System]: {'type': 'question', 'question': 'Have you experienced any respiratory symptoms, such as cough or shortness of breath?', 'letter_choice': None, 'confidence': 1.0, 'usage': {'input_tokens': 0, 'output_tokens': 0}}
+
+> /home/tlicj/LLM/MediQ/src/mediQ_benchmark.py(124)run_patient_interaction()
+-> temp_additional_info.append({k: v for k, v in response_dict.items() if k not in ["type", "letter_choice", "question"]})
+(Pdb) {'initial_info': 'An 8-year-old male child is brought to the clinic for the third time in 4 months presenting with red-brown papules with an overlying mica-like scale on the ventral side of his arms and legs', 'interaction_history': []}
+(Pdb) 
