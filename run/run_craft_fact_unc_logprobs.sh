@@ -5,5 +5,5 @@ python ../src/mediQ_benchmark.py \
  --expert_model="llama" --expert_module unc_logprobs_expert --expert_class UNCLogProbsExpert\
  --patient_model="deepseek" --patient_class FactSelectPatient\
  --data_dir ../data --dev_filename all_craft_md.jsonl \
- --output_filename ../logs/craft_fact_unc_logprobs.jsonl \
- --max_questions 5 --log_filename ../logs/craft_fact_unc_logprobs.log
+ --output_filename ../logs/craft_fact_unc_logprobs_p06.jsonl \
+ --max_questions 5 --log_filename ../logs/craft_fact_unc_logprobs_p06.log
